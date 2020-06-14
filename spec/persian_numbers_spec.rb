@@ -11,12 +11,16 @@ RSpec.describe PersianNumbers do
       it { expect(described_class.translate_to_words(9)).to eq('نه') }
       it { expect(described_class.translate_to_words('9')).to eq('نه') }
       it { expect(described_class.translate_to_words('۹')).to eq('نه') }
+
+      it { expect(described_class.translate_to_words('09')).to eq('نه') }
     end
 
     context 'with 2 digits' do
       it { expect(described_class.translate_to_words(35)).to eq('سی و پنج') }
       it { expect(described_class.translate_to_words('35')).to eq('سی و پنج') }
       it { expect(described_class.translate_to_words('۳۵')).to eq('سی و پنج') }
+
+      it { expect(described_class.translate_to_words('0035')).to eq('سی و پنج') }
     end
 
     context 'with 3 digits' do
