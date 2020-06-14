@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Payam Mousavi']
   spec.email         = ['pamit.edu@gmail.com']
 
-  spec.summary       = 'This gem serves as a number utility for Persian numbers.'
-  spec.description   = 'This gem serves as a number utility for Persian numbers.'
+  spec.summary       = 'This gem serves as a set of utility functions for Persian numbers.'
+  spec.description   = 'This gem serves as a set of utility functions for Persian numbers.'
   spec.homepage      = 'https://github.com/pamit/persian_numbers'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.4.6')
