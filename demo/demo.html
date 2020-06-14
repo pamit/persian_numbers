@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Payam Mousavi">
+    <meta name="keywords" content="Ruby, Gem, Persian, Numbers">
+    <meta name="description" content="https://github.com/pamit/persian_numbers">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Persian Numbers</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href='http://www.fontonline.ir/css/BYagut.css' rel='stylesheet' type='text/css'>
+    <link href='http://www.fontonline.ir/css/BNazanin.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+      html {
+        font-size: 14px;
+      }
+      @media (min-width: 768px) {
+        html {
+          font-size: 16px;
+        }
+      }
+      .container {
+        max-width: 960px;
+      }
+
+      .border-top { border-top: 1px solid #e5e5e5; }
+      .border-bottom { border-bottom: 1px solid #e5e5e5; }
+      .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+      td.rtl {
+        direction: rtl !important;
+        text-align: right;
+        font-family: BYagut,'BYagut',tahoma;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal"></h5>
+      <a class="btn btn-outline-primary" href="https://github.com/pamit/persian_numbers">Source Code</a>
+    </div>
+
+    <div class="container">
+      <h1>Persian Numbers</h1>
+      <p class="lead">This is a demo to demonstrate Persian Numbers functions.</p>
+      <p>&nbsp;</p>
+
+      <h3>.translate_to_words</h3>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Number</th>
+            <th scope="col">Words</th>
+          </tr>
+        </thead>
+        <tbody>
+          					<tr>						<th scope='row'>1</th>						<td>6,644,687,695,667</td>						<td class='rtl'>شش بیلیون و ششصد و چهل و چهار میلیارد و ششصد و هشتاد و هفت میلیون و ششصد و نود و پنج هزار و ششصد و شصت و هفت</td>					</tr>					<tr>						<th scope='row'>2</th>						<td>8,164,132,175,659</td>						<td class='rtl'>هشت بیلیون و صد و شصت و چهار میلیارد و صد و سی و دو میلیون و صد و هفتاد و پنج هزار و ششصد و پنجاه و نه</td>					</tr>					<tr>						<th scope='row'>3</th>						<td>3,305,704,385,450</td>						<td class='rtl'>سه بیلیون و سیصد و پنج میلیارد و هفتصد و چهار میلیون و سیصد و هشتاد و پنج هزار و چهارصد و پنجاه</td>					</tr>					<tr>						<th scope='row'>4</th>						<td>2,324,579,562,735</td>						<td class='rtl'>دو بیلیون و سیصد و بیست و چهار میلیارد و پانصد و هفتاد و نه میلیون و پانصد و شصت و دو هزار و هفتصد و سی و پنج</td>					</tr>					<tr>						<th scope='row'>5</th>						<td>1,692,125,275,710</td>						<td class='rtl'>یک بیلیون و ششصد و نود و دو میلیارد و صد و بیست و پنج میلیون و دویست و هفتاد و پنج هزار و هفتصد و ده</td>					</tr>					<tr>						<th scope='row'>6</th>						<td>8,995,628,889,214</td>						<td class='rtl'>هشت بیلیون و نهصد و نود و پنج میلیارد و ششصد و بیست و هشت میلیون و هشتصد و هشتاد و نه هزار و دویست و چهارده</td>					</tr>					<tr>						<th scope='row'>7</th>						<td>6,905,406,196,252</td>						<td class='rtl'>شش بیلیون و نهصد و پنج میلیارد و چهارصد و شش میلیون و صد و نود و شش هزار و دویست و پنجاه و دو</td>					</tr>					<tr>						<th scope='row'>8</th>						<td>4,052,155,827,181</td>						<td class='rtl'>چهار بیلیون و پنجاه و دو میلیارد و صد و پنجاه و پنج میلیون و هشتصد و بیست و هفت هزار و صد و هشتاد و یک</td>					</tr>					<tr>						<th scope='row'>9</th>						<td>9,996,660,196,659</td>						<td class='rtl'>نه بیلیون و نهصد و نود و شش میلیارد و ششصد و شصت میلیون و صد و نود و شش هزار و ششصد و پنجاه و نه</td>					</tr>					<tr>						<th scope='row'>10</th>						<td>3,959,848,990,780</td>						<td class='rtl'>سه بیلیون و نهصد و پنجاه و نه میلیارد و هشتصد و چهل و هشت میلیون و نهصد و نود هزار و هفتصد و هشتاد</td>					</tr>
+        </tbody>
+      </table>
+
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted">&copy; 2020</small>
+          </div>
+        </div>
+      <footer/>
+    <div/>
+
+  </body>
+</html>
