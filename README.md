@@ -44,7 +44,7 @@ ruby demo/generate.rb
 
 ## CHANGELOG
 
-[https://github.com/pamit/persian_numbers/CHANGELOG.md](https://github.com/pamit/persian_numbers/CHANGELOG.md)
+[https://github.com/pamit/persian_numbers/blob/master/CHANGELOG.md](https://github.com/pamit/persian_numbers/blob/master/CHANGELOG.md)
 
 
 ## Development
