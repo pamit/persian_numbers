@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/pamit/persian_numbers.svg?branch=master)](https://travis-ci.org/pamit/persian_numbers)
 [![Coverage Status](https://coveralls.io/repos/github/pamit/persian_numbers/badge.svg?branch=master)](https://coveralls.io/github/pamit/persian_numbers?branch=master)
 [![Gem Version](https://badge.fury.io/rb/persian_numbers.svg)](https://badge.fury.io/rb/persian_numbers)
+![CI](https://github.com/pamit/persian_numbers/workflows/CI/badge.svg?branch=master)
 
 # PersianNumbers
 
