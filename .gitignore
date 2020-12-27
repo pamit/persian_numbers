@@ -8,5 +8,4 @@
 /tmp/
 .vscode/
 .byebug_history
-# rspec failure tracking
 .rspec_status
