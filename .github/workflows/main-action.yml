@@ -1,6 +1,4 @@
-# This is a basic workflow to check out Github Actions by me!
-
-name: CI
+name: Setup project and run tests
 
 on:
   push:
