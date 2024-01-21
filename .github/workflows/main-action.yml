@@ -13,7 +13,7 @@ on:
         required: true
 
 jobs:
-  build:
+  Build:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,17 +36,18 @@ jobs:
           
       - name: Run Tests
         run: |
+          echo "🧪 Testing..."
           bundle exec rspec
 
   Test:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
-    needs: build
+    needs: Build
     environment: Test
     steps:
       - run: |
           echo "🧪 Testing..."
-          sleep 10
+          bundle exec rspec
 
   Production:
     runs-on: ubuntu-latest
