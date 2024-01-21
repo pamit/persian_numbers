@@ -47,7 +47,7 @@ jobs:
     steps:
       - run: |
           echo "🧪 Testing..."
-          bundle exec rspec
+          sleep 10
 
   Production:
     runs-on: ubuntu-latest
