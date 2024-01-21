@@ -2,9 +2,9 @@ name: Connect to an AWS role
 
 on:
   push:
-    branches: [ master, develop ]
+    branches: [ master ]
   pull_request:
-    branches: [ master, develop ]
+    branches: [ master ]
   workflow_dispatch:
 
 env:
@@ -31,6 +31,7 @@ jobs:
         run: |-
           aws sts get-caller-identity
 
+          echo ""
           echo "🚀 🥎 🗿 🪣 Calling S3..."
           aws s3 ls
           echo "---"
