@@ -21,19 +21,19 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7.1'
+          # ruby-version: '2.7.1' # Not needed with a .ruby-version file
           bundler-cache: true
-          
+
       - name: Install Dependencies
         run: |
           echo "Installing Bundler..."
           gem install bundler
-          
+
       - name: Install Gems
         run: |
           echo "Installing gems..."
-          bundle install   
-          
+          bundle install
+
       - name: Run Tests
         run: |
           echo "🧪 Testing..."

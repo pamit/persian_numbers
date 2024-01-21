@@ -19,10 +19,10 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{lib,spec,demo}/**/*", "[a-zA-Z]*"]
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler', '~> 2.1.4'
+  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'byebug'
   spec.add_development_dependency 'coveralls'
-  spec.add_development_dependency 'rake', '~> 12.0'
-  spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rubocop'
 end
