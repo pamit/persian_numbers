@@ -38,7 +38,7 @@ jobs:
         run: |
           echo "🧪 Testing..."
           bundle exec rspec
-          sleep 30
+          sleep 5
 
   Test:
     runs-on: ubuntu-latest
