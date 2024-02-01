@@ -40,6 +40,11 @@ jobs:
           bundle exec rspec
           sleep 5
 
+      - name: Run final checks
+        run: |
+          echo "🧪 Final checks..."
+          sleep 5          
+
   Test:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
