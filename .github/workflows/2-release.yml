@@ -23,7 +23,7 @@ jobs:
         if: |
           contains(job.status, 'failure') || 
           contains(steps.*.outcome, 'failure') ||
-          (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+          (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion != 'success')
         run: exit 1
 
   release:
