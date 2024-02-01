@@ -16,6 +16,16 @@ permissions:
       contents: read    # This is required for actions/checkout
 
 jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check workflow
+        run: | 
+          echo "🧪 Checking triggering workflow..."
+          echo "[Release] ref: ${{ github.ref }} - event: ${{ github.event_name }} - conclusion: ${{ github.event.workflow_run.conclusion }}"
+          echo "[Release] condition: ${{ (github.event_name != 'workflow_run') || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}"
+          
   AssumeRoleAndCallIdentity:
     runs-on: ubuntu-latest
     if: |
