@@ -1,4 +1,4 @@
-name: Setup project and run tests
+name: Setup
 
 on:
   push:
