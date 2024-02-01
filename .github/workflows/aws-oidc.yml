@@ -4,8 +4,7 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows: [Release]
-    types:
-      - completed
+    types: [completed]
     branches: [master]  
 
 env:
@@ -19,15 +18,21 @@ permissions:
 jobs:
   AssumeRoleAndCallIdentity:
     runs-on: ubuntu-latest
+    if: |
+        (github.event_name != 'workflow_run') ||
+        (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+
     steps:
       - name: Clone the repository
         uses: actions/checkout@v3
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::975050274331:role/GitHubAction-AssumeRoleWithAction
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
+
       - name: STS GetCallerIdentity
         run: |-
           aws sts get-caller-identity
