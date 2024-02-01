@@ -18,7 +18,14 @@ jobs:
           echo "🧪 Checking triggering workflow..."
           echo "[Release] ref: ${{ github.ref }} - event: ${{ github.event_name }} - conclusion: ${{ github.event.workflow_run.conclusion }}"
           echo "[Release] condition: ${{ (github.event_name != 'workflow_run') || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}"
-          
+
+      - name: Fail the build if something went wrong
+        if: |
+          contains(job.status, 'failure') || 
+          contains(steps.*.outcome, 'failure') ||
+          (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+        run: exit 1
+
   release:
     runs-on: ubuntu-latest
     if: |
