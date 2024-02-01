@@ -18,6 +18,9 @@ permissions:
 jobs:
   checks:
     runs-on: ubuntu-latest
+    if: |
+        (github.event_name != 'workflow_run') ||
+        (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')    
     steps:
       - uses: actions/checkout@v2
       - name: Check workflow
@@ -28,10 +31,7 @@ jobs:
           
   AssumeRoleAndCallIdentity:
     runs-on: ubuntu-latest
-    if: |
-        (github.event_name != 'workflow_run') ||
-        (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
-
+    needs: checks
     steps:
       - name: Clone the repository
         uses: actions/checkout@v3
