@@ -28,7 +28,7 @@ jobs:
         run: | 
           echo "🧪 Checking previous workflow..."
           echo "[Release] ref: ${{ github.ref }} - event: ${{ github.event_name }} - conclusion: ${{ github.event.workflow_run.conclusion }}"
-          ecoh "[Release] condition: ${{ (github.event_name != 'workflow_run') || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}"
+          # ecoh "[Release] condition: ${{ (github.event_name != 'workflow_run') || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}"
         
       - name: Set up Docker Buildx
         id: buildx
