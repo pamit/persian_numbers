@@ -1,6 +1,7 @@
 RSpec.describe PersianNumbers do
   describe '.translate_to_words' do
     context 'Testing GHA failed build scenario' do
+      it { expect(true).to eq(true) }
       it { expect(true).to eq(false) }
     end
 
