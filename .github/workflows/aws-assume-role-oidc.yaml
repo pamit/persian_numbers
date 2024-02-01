@@ -1,11 +1,12 @@
-name: Connect to an AWS role
+name: AWS-assume-role
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
   workflow_dispatch:
+  workflow_run:
+    workflows: [Release]
+    types:
+      - completed
+    branches: [master]  
 
 env:
   AWS_REGION: ap-southeast-2
