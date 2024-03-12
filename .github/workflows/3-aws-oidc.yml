@@ -31,6 +31,15 @@ jobs:
           
   AssumeRoleAndCallIdentity:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment:
+          - test
+        include:
+          - environment: test
+            bucket: ryan-shaki-3rd
+    env:
+      BUCKET: ${{ matrix.bucket }}    
     needs: checks
     steps:
       - name: Clone the repository
@@ -51,4 +60,5 @@ jobs:
           echo "🚀 🥎 🗿 🪣 Calling S3..."
           aws s3 ls
           echo "---"
-          aws s3api list-objects --bucket ryan-shaki-3rd
+          # aws s3api list-objects --bucket ryan-shaki-3rd
+          aws s3api list-objects --bucket ${{ env.BUCKET }}
