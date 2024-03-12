@@ -35,9 +35,12 @@ jobs:
       matrix:
         environment:
           - test
+          - prod
         include:
           - environment: test
             bucket: ryan-shaki-3rd
+          - environment: prod
+            bucket: ryan-shaki-4th
     env:
       BUCKET: ${{ matrix.bucket }}    
     needs: checks
