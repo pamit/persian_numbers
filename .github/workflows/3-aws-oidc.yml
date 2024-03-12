@@ -31,15 +31,17 @@ jobs:
           
   AssumeRoleAndCallIdentity:
     runs-on: ubuntu-latest
+    env:
+      BUCKET_PREFIX: ryan
     strategy:
       matrix:
         environment: [ test, production ]
         region: [ ap-southeast-2, us-east-1 ]
         include:
           - region: ap-southeast-2
-            bucket: ryan-shaki-3rd
+            bucket: shaki-3rd
           - region: us-east-1
-            bucket: ryan-shaki-4th
+            bucket: shaki-4th
           - environment: test
             foo: bar1
           - environment: production
@@ -79,5 +81,5 @@ jobs:
           echo "🚀 🥎 🗿 🪣 Calling S3..."
           aws s3 ls
           echo "---"
-          echo "bucket content (${{ matrix.bucket }}) in ${{ matrix.region }}:"
-          aws s3api list-objects --bucket ${{ matrix.bucket }}
+          echo "bucket content (${{ env.BUCKET_PREFIX }}-${{ matrix.bucket }}) in ${{ matrix.region }}:"
+          aws s3api list-objects --bucket ${{ env.BUCKET_PREFIX }}-${{ matrix.bucket }}
