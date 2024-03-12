@@ -39,7 +39,11 @@ jobs:
           - region: ap-southeast-2
             bucket: ryan-shaki-3rd
           - region: us-east-1
-            bucket: ryan-shaki-4th   
+            bucket: ryan-shaki-4th
+          - environment: test
+            foo: bar1
+          - environment: production
+            foo: bar2
           # - environment: test
           #   region: ap-southeast-2
           #   bucket: ryan-shaki-3rd
@@ -71,7 +75,7 @@ jobs:
         run: |-
           aws sts get-caller-identity
 
-          echo "env: ${{ matrix.environment }} | region: ${{ matrix.region }}"
+          echo "env: ${{ matrix.environment }} | region: ${{ matrix.region }} | foo: ${{ matrix.foo }}"
           echo "🚀 🥎 🗿 🪣 Calling S3..."
           aws s3 ls
           echo "---"
