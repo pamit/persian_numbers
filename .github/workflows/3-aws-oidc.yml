@@ -33,16 +33,18 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        environment:
-          - test
-          - prod
+        environment: [ test, production ]
+        region: [ ap-southeast-2, us-east-1 ]
         include:
           - environment: test
+            region: ap-southeast-2
             bucket: ryan-shaki-3rd
           - environment: prod
+            region: us-east-1
             bucket: ryan-shaki-4th
     env:
-      BUCKET: ${{ matrix.bucket }}    
+      BUCKET: ${{ matrix.bucket }}
+      region: ${{ matrix.region }}
     needs: checks
     steps:
       - name: Clone the repository
@@ -59,9 +61,10 @@ jobs:
         run: |-
           aws sts get-caller-identity
 
-          echo ""
+          echo "env: ${{ matrix.environment }} | region: ${{ matrix.region }}"
           echo "🚀 🥎 🗿 🪣 Calling S3..."
           aws s3 ls
           echo "---"
-          # aws s3api list-objects --bucket ryan-shaki-3rd
+          echo "bucket content (${{ env.BUCKET }}) in ${{ env.region }}:"
+          ### aws s3api list-objects --bucket ryan-shaki-3rd
           aws s3api list-objects --bucket ${{ env.BUCKET }}
