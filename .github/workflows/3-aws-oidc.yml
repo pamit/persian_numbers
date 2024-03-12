@@ -52,9 +52,9 @@ jobs:
           # - environment: production
           #   region: us-east-1
           #   bucket: ryan-shaki-4th
-    env:
-      BUCKET: ${{ matrix.bucket }}
-      region: ${{ matrix.region }}
+    # env:
+    #   BUCKET: ${{ matrix.bucket }}
+    #   REGION: ${{ matrix.region }}
     needs: checks
     steps:
       - name: Clone the repository
@@ -75,6 +75,5 @@ jobs:
           echo "🚀 🥎 🗿 🪣 Calling S3..."
           aws s3 ls
           echo "---"
-          echo "bucket content (${{ env.BUCKET }}) in ${{ env.region }}:"
-          ### aws s3api list-objects --bucket ryan-shaki-3rd
-          aws s3api list-objects --bucket ${{ env.BUCKET }}
+          echo "bucket content (${{ matrix.bucket }}) in ${{ matrix.region }}:"
+          aws s3api list-objects --bucket ${{ matrix.bucket }}
