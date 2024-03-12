@@ -36,18 +36,22 @@ jobs:
         environment: [ test, production ]
         region: [ ap-southeast-2, us-east-1 ]
         include:
-          - environment: test
-            region: ap-southeast-2
+          - region: ap-southeast-2
             bucket: ryan-shaki-3rd
-          - environment: test
-            region: us-east-1
-            bucket: ryan-shaki-3rd   
-          - environment: production
-            region: ap-southeast-2,
-            bucket: ryan-shaki-4th            
-          - environment: production
-            region: us-east-1
-            bucket: ryan-shaki-4th
+          - region: us-east-1
+            bucket: ryan-shaki-4th   
+          # - environment: test
+          #   region: ap-southeast-2
+          #   bucket: ryan-shaki-3rd
+          # - environment: test
+          #   region: us-east-1
+          #   bucket: ryan-shaki-3rd   
+          # - environment: production
+          #   region: ap-southeast-2
+          #   bucket: ryan-shaki-4th            
+          # - environment: production
+          #   region: us-east-1
+          #   bucket: ryan-shaki-4th
     env:
       BUCKET: ${{ matrix.bucket }}
       region: ${{ matrix.region }}
