@@ -35,29 +35,25 @@ jobs:
       BUCKET_PREFIX: ryan
     strategy:
       matrix:
-        environment: [ test, production ]
-        region: [ ap-southeast-2, us-east-1 ]
+        # environment: [ test, production ]
+        # region: [ ap-southeast-2, us-east-1 ]
         include:
-          - region: ap-southeast-2
-            bucket: shaki-3rd
-          - region: us-east-1
-            bucket: shaki-4th
+          # - region: ap-southeast-2
+          #   bucket: shaki-3rd
+          # - region: us-east-1
+          #   bucket: shaki-4th
           - environment: test
-            foo: bar1
+            region: ap-southeast-2
+            kms: kms-test-ap-southeast-2
+          - environment: test
+            region: us-east-1
+            kms: kms-test-us-east-1
           - environment: production
-            foo: bar2
-          # - environment: test
-          #   region: ap-southeast-2
-          #   bucket: ryan-shaki-3rd
-          # - environment: test
-          #   region: us-east-1
-          #   bucket: ryan-shaki-3rd   
-          # - environment: production
-          #   region: ap-southeast-2
-          #   bucket: ryan-shaki-4th            
-          # - environment: production
-          #   region: us-east-1
-          #   bucket: ryan-shaki-4th
+            region: ap-southeast-2
+            kms: kms-prod-ap-southeast-2
+          - environment: production
+            region: us-east-1
+            kms: kms-prod-us-east-1
     # env:
     #   BUCKET: ${{ matrix.bucket }}
     #   REGION: ${{ matrix.region }}
@@ -77,7 +73,7 @@ jobs:
         run: |-
           aws sts get-caller-identity
 
-          echo "env: ${{ matrix.environment }} | region: ${{ matrix.region }} | foo: ${{ matrix.foo }}"
+          echo "env: ${{ matrix.environment }} | region: ${{ matrix.region }} | kms: ${{ matrix.kms }}"
           echo "🚀 🥎 🗿 🪣 Calling S3..."
           aws s3 ls
           echo "---"
