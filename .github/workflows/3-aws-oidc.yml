@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BUCKET_PREFIX: ryan
-      ENVI: ${{ inputs.environment || "test" }}
+      ENVI: ${{ inputs.environment }} || "test"
     strategy:
       matrix:
         environment: [ test, production ]
