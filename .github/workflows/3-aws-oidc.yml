@@ -45,15 +45,19 @@ jobs:
           - environment: test
             region: ap-southeast-2
             kms: kms-test-ap-southeast-2
+            bucket: shaki-3rd
           - environment: test
             region: us-east-1
             kms: kms-test-us-east-1
+            bucket: shaki-3rd
           - environment: production
             region: ap-southeast-2
             kms: kms-prod-ap-southeast-2
+            bucket: shaki-4th
           - environment: production
             region: us-east-1
             kms: kms-prod-us-east-1
+            bucket: shaki-4th
     # env:
     #   BUCKET: ${{ matrix.bucket }}
     #   REGION: ${{ matrix.region }}
