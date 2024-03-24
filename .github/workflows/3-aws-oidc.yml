@@ -36,29 +36,38 @@ jobs:
       ENVI: ${{ inputs.environment || "test" }}
     strategy:
       matrix:
-        # environment: [ test, production ]
-        # region: [ ap-southeast-2, us-east-1 ]
+        environment: [ test, production ]
+        region: [ ap-southeast-2, us-east-1 ]
         include:
-          # - region: ap-southeast-2
-          #   bucket: shaki-3rd
-          # - region: us-east-1
-          #   bucket: shaki-4th
           - environment: test
-            region: ap-southeast-2
+            bucket: shaki-3rd
+          - environment: production
+            bucket: shaki-4th
+          - region: ap-southeast-2
+            environment: test
             kms: kms-test-ap-southeast-2
-            bucket: shaki-3rd
-          - environment: test
-            region: us-east-1
-            kms: kms-test-us-east-1
-            bucket: shaki-3rd
-          - environment: production
-            region: ap-southeast-2
+          - region: ap-southeast-2
+            environment: production
             kms: kms-prod-ap-southeast-2
-            bucket: shaki-4th
-          - environment: production
-            region: us-east-1
-            kms: kms-prod-us-east-1
-            bucket: shaki-4th
+          - region: us-east-1
+            kms: kms-us-east-1-test-prod
+
+          # - environment: test
+          #   region: ap-southeast-2
+          #   kms: kms-test-ap-southeast-2
+          #   bucket: shaki-3rd
+          # - environment: test
+          #   region: us-east-1
+          #   kms: kms-test-us-east-1
+          #   bucket: shaki-3rd
+          # - environment: production
+          #   region: ap-southeast-2
+          #   kms: kms-prod-ap-southeast-2
+          #   bucket: shaki-4th
+          # - environment: production
+          #   region: us-east-1
+          #   kms: kms-prod-us-east-1
+          #   bucket: shaki-4th
     # env:
     #   BUCKET: ${{ matrix.bucket }}
     #   REGION: ${{ matrix.region }}
