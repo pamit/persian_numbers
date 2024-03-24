@@ -33,6 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BUCKET_PREFIX: ryan
+      ENVI: ${{ inputs.environment }} || "test"
     strategy:
       matrix:
         # environment: [ test, production ]
@@ -77,7 +78,7 @@ jobs:
         run: |-
           aws sts get-caller-identity
 
-          echo "env: ${{ matrix.environment }} | region: ${{ matrix.region }} | kms: ${{ matrix.kms }}"
+          echo "env: ${{ matrix.environment }} | region: ${{ matrix.region }} | kms: ${{ matrix.kms }} | ENVI: ${{ env.ENVI }}"
           echo "🚀 🥎 🗿 🪣 Calling S3..."
           aws s3 ls
           echo "---"
