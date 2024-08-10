@@ -61,7 +61,7 @@ jobs:
     environment:
       name: Production
       url: https://example.com
-    if: github.event.inputs.environment == 'Production'
+    # if: github.event.inputs.environment == 'Production'
     steps:
       - run: |
           echo "🚀 Step 1..."
